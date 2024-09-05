@@ -1,4 +1,4 @@
-const Contacts = artifacts.require("StudentListStorage.sol")
+const Contacts = artifacts.require("StudentStorage.sol")
 
 module.exports = function(deployer){
     deployer.deploy(Contacts)

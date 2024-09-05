@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0
 pragma solidity >=0.4.16 <0.9.0;
 
 contract StudentListStorage{
@@ -14,7 +15,7 @@ contract StudentListStorage{
         uint count = StudentList.length;
         uint index = count+1;
         StudentList.push(Student(index,_name,_age));
-        return StudentList.length
+        return StudentList.length;
     }
     //get变量
     function getList() public view returns (Student[] memroy){
