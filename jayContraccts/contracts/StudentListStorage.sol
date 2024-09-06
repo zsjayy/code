@@ -23,8 +23,10 @@ contract StudentListStorage{
         Student[] memory list = StudentList;
         return list;
     }
-
-    function delList(uint index) public{
-        delete StudentList[index];
+    
+    //delete变量
+    function delList(uint _id) public returns (uint){
+        delete StudentList[_id];
+        return StudentList.length;
     }
 }

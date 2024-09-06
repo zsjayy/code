@@ -123,16 +123,22 @@
       "inputs": [
         {
           "internalType": "uint256",
-          "name": "index",
+          "name": "_id",
           "type": "uint256"
         }
       ],
       "name": "delList",
-      "outputs": [],
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
       "stateMutability": "nonpayable",
       "type": "function"
     }
-  ],"0xFC628dd79137395F3C9744e33b1c5DE554D94882");
+  ],"0x4bf3A7dFB3b76b5B3E169ACE65f888A4b4FCa5Ee");
 
           console.log(studentStorage);
 
@@ -149,12 +155,13 @@
           }
 
           deleted.onclick = async function(){
-            await studentStorage.methods.delList(myid).send(
+            await studentStorage.methods.delList(myid.value).send(
                 {
                     from:account[0]
                 }
             )
             //获取列表
+            getList()
           }
 
           //首页进入页面，获取列表

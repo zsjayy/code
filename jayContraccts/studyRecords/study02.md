@@ -25,3 +25,10 @@ calldata--
 03-部署完成之后对应的xxx.json文件里就会包含abi和地址
 04-再通过web3.js库对abi和地址进行调用
 ![alt text](image-2.png)
+
+# 心得03
+html在传递文本框中的值时，需要使用元素id.value来获取，否则会报错
+‘’‘text
+Uncaught (in promise) Error: invalid BigNumber value (argument="value", valu
+’‘’
+![alt text](image-3.png)
