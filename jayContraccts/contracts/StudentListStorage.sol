@@ -23,4 +23,8 @@ contract StudentListStorage{
         Student[] memory list = StudentList;
         return list;
     }
+
+    function delList(uint index) public{
+        delete StudentList[index];
+    }
 }
