@@ -16,6 +16,7 @@ contract KerwinToken{
 
     //mapping
     mapping(address => uint256) public balanceOf;
+    mapping(address => mapping(address=>uint256)) public allowance;
 
     //使用constructor构造器初始化代币的总量
     constructor(){
@@ -47,6 +48,16 @@ contract KerwinToken{
         
         //触发事件
         emit Transfer(_from, _to, _value);
+    }
+
+    function approve(address _spender, uint256 _value)public return(bool success){
+        //msg.sender 当前网页登录的账号
+        //_spender 第三方交易所的账号地址
+        //_value授权的钱数
+        allowance[msg.sender][_spender] = _value;
+        //当前登录账号--交易所--授权的钱
+        emit Approval(msg.sender,_spender,_value);
+        return true;
     }
 
 }
